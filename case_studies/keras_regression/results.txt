@@ -1,0 +1,12 @@
+
+With outliers
+avg house price: $533,388.27,std house price: $493,403.08
+mean: 22.763181556354656, std: 21.95066477523444
+
+
+avg house price: $509,384.87,std house price: $366,893.91
+mean: 21.922001303998414, std: 20.3383498811523
+
+
+
+
