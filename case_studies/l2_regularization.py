@@ -2,12 +2,12 @@ import numpy as np
 import sys
 
 sys.path.append('..')
-from utils import time_func
+from utils import time_func_rep
 
 W = np.random.randn(1000, 1)
 
 
-@time_func
+@time_func_rep
 def l2_reg_for(W):
     penalty = 0
     for i in np.arange(0, W.shape[0]):
@@ -16,7 +16,7 @@ def l2_reg_for(W):
     return penalty
 
 
-@time_func
+@time_func_rep
 def l2_reg_opt(W):
     penalty = np.sum(W ** 2)
     return penalty

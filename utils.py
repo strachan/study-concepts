@@ -2,7 +2,7 @@ import numpy as np
 import time
 
 
-def time_func(f):
+def time_func_rep(f):
     def wrap(*args):
         repetitions = 100
         time_result = np.zeros(repetitions)
@@ -12,5 +12,16 @@ def time_func(f):
             time2 = time.time()
             time_result[i] = (time2 - time1) * 1000.0
         print(f'{f.__name__} function took {np.mean(time_result)} ms')
+        return ret
+    return wrap
+
+
+def time_func(f):
+    def wrap(*args):
+        time1 = time.time()
+        ret = f(*args)
+        time2 = time.time()
+        time_result = (time2 - time1) * 1000.0
+        print(f'{f.__name__} function took {time_result} ms')
         return ret
     return wrap
