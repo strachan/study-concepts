@@ -15,7 +15,8 @@ sites = [
 ] * 80
 
 concurrency_types = {'sync': synchronous.download_all_site,
-                     'thread': with_threads.download_all_sites}
+                     'thread': with_threads.download_all_sites,
+                     'async': asynchronous.run_async}
 
 
 @time_func
@@ -26,7 +27,7 @@ def start(concurrency_type):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--concurrency',
-                        choices=['sync', 'thread'],
+                        choices=['sync', 'thread', 'async'],
                         help='choose concurrency type')
     args = vars(parser.parse_args())
 
