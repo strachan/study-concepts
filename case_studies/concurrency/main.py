@@ -14,7 +14,8 @@ sites = [
     "http://olympus.realpython.org/dice"
 ] * 80
 
-concurrency_types = {'sync': synchronous.download_all_site}
+concurrency_types = {'sync': synchronous.download_all_site,
+                     'thread': with_threads.download_all_sites}
 
 
 @time_func
@@ -25,7 +26,7 @@ def start(concurrency_type):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--concurrency',
-                        choices=['sync'],
+                        choices=['sync', 'thread'],
                         help='choose concurrency type')
     args = vars(parser.parse_args())
 
