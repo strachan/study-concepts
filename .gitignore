@@ -110,5 +110,15 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
+# serialized models
+*.pickle
+
 # keras regression dataset
 Houses-dataset/
+
+# keras classification dataset
+dataset/
+examples/
+
+# keras classification model
+case_studies/keras_multi_label_classification/model
