@@ -75,8 +75,8 @@ aug = ImageDataGenerator(rotation_range=25, width_shift_range=0.1,
 
 print('[INFO] compiling model...')
 model = SmallerVGGNet.build(width=IMAGE_DIMS[1], height=IMAGE_DIMS[0],
-                          depth=IMAGE_DIMS[2], classes=len(mlb.classes_),
-                          final_act='sigmoid')
+                            depth=IMAGE_DIMS[2], classes=len(mlb.classes_),
+                            final_act='sigmoid')
 opt = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
 model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
 
